@@ -16,28 +16,54 @@ const age = document.querySelector('#age');
 const button = document.querySelector('#start');
 
 const nome = document.querySelector('#nome');
-const chilometri = document.querySelector('#chilometri');
-const età = document.querySelector('#età');
+
 
 button.addEventListener('click', function() {
     const name = userName.value;
     console.log('Nome Passeggero: ', name);
 
-    const kms = km.value;
+    const kms = parseInt(km.value);
     console.log('Chilometri da percorrere: ', kms);
 
-    const ages = age.value;
+    const ages = parseInt(age.value);
     console.log('Età del passeggero: ', ages);
 
     if (name) {
         nome.innerHTML = `Nome Passeggero ${name}`;
     }
 
-    if (kms) {
-        chilometri.innerHTML = `Chilometri da percorrere ${kms}`;
+
+    let priceTicket = kms * 0.21;
+    console.log('Prezzo del biglietto standard: ', priceTicket);
+
+    if (ages < 18) {
+        priceTicket = priceTicket - (priceTicket * 0.20)
+        console.log('prezzo scontato per utenti che hanno età inferiore ai 18 anni è di: ', priceTicket.toFixed(2));
+    } else if (ages > 65) {
+        priceTicket = priceTicket - (priceTicket * 0.40)
+        console.log('prezzo scontato per utenti che hanno età superiore ai 65 anni: ', priceTicket.toFixed(2));
     }
 
-    if (ages) {
-        età.innerHTML = `Età del passeggero ${ages}`;
+    let biglietto = document.getElementById('ticket');
+
+    if (ages < 18 || ages > 65) {
+        biglietto.innerText = 'Biglietto Scontato'
+    } else {
+        biglietto.innerText = 'Biglietto Standard'
     }
+
+    let carrozza = document.getElementById('carrozza');
+
+    for (let i = 0; i < 1; i++) {
+        carrozza = Math.floor(Math.random() * 12) + 1;
+        console.log('Numero Carrozza: ', carrozza);
+    }
+
+    carrozza.innerText = `Numero Carrozza: ${carrozza}`;
+
+
+
+
+
+
 })
