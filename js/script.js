@@ -33,17 +33,23 @@ button.addEventListener('click', function() {
     }
 
 
-    let priceTicket = kms * 0.21;
-    console.log('Prezzo del biglietto standard: ', priceTicket);
+    const price = kms * 0.21;
+    let prezzo = price;
+    console.log('Prezzo del biglietto standard: ', price);
 
     if (ages < 18) {
-        priceTicket = priceTicket - (priceTicket * 0.20)
-        console.log('prezzo scontato per utenti che hanno età inferiore ai 18 anni è di: ', priceTicket.toFixed(2));
+        prezzo = price - (price * 0.20)
+        console.log('prezzo scontato per utenti che hanno età inferiore ai 18 anni è di: ', prezzo.toFixed(2));
     } else if (ages > 65) {
-        priceTicket = priceTicket - (priceTicket * 0.40)
-        console.log('prezzo scontato per utenti che hanno età superiore ai 65 anni: ', priceTicket.toFixed(2));
+        prezzo = price - (price * 0.40)
+        console.log('prezzo scontato per utenti che hanno età superiore ai 65 anni: ', prezzo.toFixed(2));
     }
 
+    let priceTicket = document.getElementById('price-ticket');
+    priceTicket.innerText = `Costo Biglietto: ${prezzo.toFixed(2)} €`;
+
+
+    // Calcolo se il biglietto è scontato o meno
     let biglietto = document.getElementById('ticket');
 
     if (ages < 18 || ages > 65) {
@@ -52,18 +58,21 @@ button.addEventListener('click', function() {
         biglietto.innerText = 'Biglietto Standard'
     }
 
+
+    // Calcolo il numero della carrozza
     let carrozza = document.getElementById('carrozza');
 
-    for (let i = 0; i < 1; i++) {
-        carrozza = Math.floor(Math.random() * 12) + 1;
-        console.log('Numero Carrozza: ', carrozza);
-    }
-
-    carrozza.innerText = `Numero Carrozza: ${carrozza}`;
+    const train = Math.floor(Math.random() * 12) + 1;
+    console.log('Numero Carrozza: ', train);
+    carrozza.innerText = `Numero Carrozza: ${train}`;
 
 
+    // Calcolo il Codice-CP
 
+    let codice = document.getElementById('codice-CP');
 
-
+    const cp = Math.floor(Math.random() * 99999) + 1;
+    console.log('Codice CP: ', cp);
+    codice.innerText = `Codice CP: ${cp}`;
 
 })
