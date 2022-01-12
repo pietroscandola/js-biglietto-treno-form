@@ -76,3 +76,18 @@ button.addEventListener('click', function() {
     codice.innerHTML = `<strong>Codice CP</strong> <div>${cp}</div>`;
 
 })
+
+
+const remove = document.getElementById('close')
+
+remove.addEventListener('click', function() {
+    userName.value = '';
+    km.value = '';
+    age.value = '';
+
+    nome.innerHTML = '';
+    priceTicket.innerHTML = '';
+    carrozza.innerHTML = '';
+    codice.innerHTML = '';
+    biglietto.innerHTML = '';
+})
