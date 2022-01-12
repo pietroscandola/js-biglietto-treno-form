@@ -17,6 +17,14 @@ const button = document.querySelector('#start');
 
 const nome = document.querySelector('#nome');
 
+let biglietto = document.querySelector('#ticket');
+
+const carrozza = document.querySelector('#carrozza');
+
+const codice = document.querySelector('#codice-CP')
+
+const priceTicket = document.querySelector('#price-ticket')
+
 
 button.addEventListener('click', function() {
     const name = userName.value;
