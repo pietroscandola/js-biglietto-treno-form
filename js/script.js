@@ -29,7 +29,7 @@ button.addEventListener('click', function() {
     console.log('Età del passeggero: ', ages);
 
     if (name) {
-        nome.innerHTML = `Nome Passeggero ${name}`;
+        nome.innerHTML = `<strong>Nome Passeggero</strong>: <div>${name}</div>`;
     }
 
 
@@ -46,16 +46,16 @@ button.addEventListener('click', function() {
     }
 
     let priceTicket = document.getElementById('price-ticket');
-    priceTicket.innerText = `Costo Biglietto: ${prezzo.toFixed(2)} €`;
+    priceTicket.innerHTML = `<strong>Costo Biglietto</strong>: <div>${prezzo.toFixed(2)} €</div>`;
 
 
     // Calcolo se il biglietto è scontato o meno
     let biglietto = document.getElementById('ticket');
 
     if (ages < 18 || ages > 65) {
-        biglietto.innerText = 'Biglietto Scontato'
+        biglietto.innerHTML = '<strong>Offerta</strong> <div>Biglietto Scontato</div>'
     } else {
-        biglietto.innerText = 'Biglietto Standard'
+        biglietto.innerHTML = '<strong>Offerta</strong> <div>Biglietto Standard</div>'
     }
 
 
@@ -64,7 +64,7 @@ button.addEventListener('click', function() {
 
     const train = Math.floor(Math.random() * 12) + 1;
     console.log('Numero Carrozza: ', train);
-    carrozza.innerText = `Numero Carrozza: ${train}`;
+    carrozza.innerHTML = `<strong>Numero Carrozza</strong> <div>${train}</div>`;
 
 
     // Calcolo il Codice-CP
@@ -73,6 +73,6 @@ button.addEventListener('click', function() {
 
     const cp = Math.floor(Math.random() * 99999) + 1;
     console.log('Codice CP: ', cp);
-    codice.innerText = `Codice CP: ${cp}`;
+    codice.innerHTML = `<strong>Codice CP</strong> <div>${cp}</div>`;
 
 })
