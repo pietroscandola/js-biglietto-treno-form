@@ -8,29 +8,36 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 */
 
 const userName = document.querySelector('#name');
-console.log('Nome Utente: ', userName);
 
-const kms = document.querySelector('#kms');
-console.log('Kms: ', kms);
+const km = document.querySelector('#km');
 
 const age = document.querySelector('#age');
-console.log('Age: ', age);
 
-const button = document.querySelector('#start')
+const button = document.querySelector('#start');
 
-const placeholder = document.querySelector('#placeholder')
+const nome = document.querySelector('#nome');
+const chilometri = document.querySelector('#chilometri');
+const età = document.querySelector('#età');
 
 button.addEventListener('click', function() {
     const name = userName.value;
-    console.log(name);
-    placeholder.innerHTML = `${name}`;
+    console.log('Nome Passeggero: ', name);
 
-    const km = userName.value;
-    console.log(name);
-    placeholder.innerHTML = `${name}`;
+    const kms = km.value;
+    console.log('Chilometri da percorrere: ', kms);
 
-    const name = userName.value;
-    console.log(name);
-    placeholder.innerHTML = `${name}`;
+    const ages = age.value;
+    console.log('Età del passeggero: ', ages);
 
+    if (name) {
+        nome.innerHTML = `Nome Passeggero ${name}`;
+    }
+
+    if (kms) {
+        chilometri.innerHTML = `Chilometri da percorrere ${kms}`;
+    }
+
+    if (ages) {
+        età.innerHTML = `Età del passeggero ${ages}`;
+    }
 })
