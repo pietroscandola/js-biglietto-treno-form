@@ -14,40 +14,60 @@
 </head>
 
 <body>
-    <section>
+    <section class="container my-5">
         <h2 class="text-center my-3">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
 
-        <div class="d-flex text-center">
-            <div>
-                <label for="name">Nome Cognome</label>
+        <div class="d-flex justify-content-center">
+
+            <div class="d-flex flex-column mx-5">
+                <label for="name" class="text-center my-3">Nome Cognome</label>
                 <input type="text" id="name">
             </div>
-            <div>
-                <label for="km">Km da percorrere</label>
+
+            <div class="d-flex flex-column mx-5">
+                <label for="km" class="text-center my-3">Km da percorrere</label>
                 <input type="text" id="km">
             </div>
-            <div>
-                <label for="age">Fascia d'età</label>
+            <div class="d-flex flex-column mx-5">
+                <label for="age" class="text-center my-3">Fascia d'età</label>
                 <input type="text" id="age">
             </div>
         </div>
 
 
-        <div>
-            <button id="start">Genera</button>
-            <button id="close">Annulla</button>
+        <div class="text-center my-5">
+            <button id="start" class="mx-5">Genera</button>
+            <button id="close" class="mx-5">Annulla</button>
         </div>
 
     </section>
 
-    <section>
+    <section class="container">
         <h2 class="text-center my-3">IL TUO BIGLIETTO</h2>
         <p>DETTAGLIO PASSEGGERI</p>
-        <div id="nome"></div>
-        <div id="ticket"></div>
-        <div id="carrozza"></div>
-        <div id="codice-CP"></div>
-        <div id="price-ticket"></div>
+        <div class="row">
+
+            <div class="col">
+                <div id="nome"></div>
+            </div>
+
+            <div class="col">
+                <div id="ticket"></div>
+            </div>
+
+            <div class="col">
+                <div id="carrozza"></div>
+            </div>
+
+            <div class="col">
+                <div id="codice-CP"></div>
+            </div>
+
+            <div class="col">
+                <div id="price-ticket"></div>
+            </div>
+
+        </div>
 
 
 
