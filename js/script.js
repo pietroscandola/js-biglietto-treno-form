@@ -17,7 +17,7 @@ const button = document.querySelector('#start');
 
 const nome = document.querySelector('#nome');
 
-let biglietto = document.querySelector('#ticket');
+const biglietto = document.querySelector('#ticket');
 
 const carrozza = document.querySelector('#carrozza');
 
@@ -40,7 +40,7 @@ button.addEventListener('click', function() {
         nome.innerHTML = `<strong>Nome Passeggero</strong>: <div>${name}</div>`;
     }
 
-
+    // Prezzo Biglietto
     const price = kms * 0.21;
     let prezzo = price;
     console.log('Prezzo del biglietto standard: ', price);
@@ -53,12 +53,10 @@ button.addEventListener('click', function() {
         console.log('prezzo scontato per utenti che hanno età superiore ai 65 anni: ', prezzo.toFixed(2));
     }
 
-    let priceTicket = document.getElementById('price-ticket');
     priceTicket.innerHTML = `<strong>Costo Biglietto</strong>: <div>${prezzo.toFixed(2)} €</div>`;
 
 
     // Calcolo se il biglietto è scontato o meno
-    let biglietto = document.getElementById('ticket');
 
     if (ages < 18 || ages > 65) {
         biglietto.innerHTML = '<strong>Offerta</strong> <div>Biglietto Scontato</div>'
@@ -68,7 +66,6 @@ button.addEventListener('click', function() {
 
 
     // Calcolo il numero della carrozza
-    let carrozza = document.getElementById('carrozza');
 
     const train = Math.floor(Math.random() * 12) + 1;
     console.log('Numero Carrozza: ', train);
@@ -76,8 +73,6 @@ button.addEventListener('click', function() {
 
 
     // Calcolo il Codice-CP
-
-    let codice = document.getElementById('codice-CP');
 
     const cp = Math.floor(Math.random() * 99999) + 1;
     console.log('Codice CP: ', cp);
